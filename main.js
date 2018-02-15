@@ -12,18 +12,24 @@ var pioneerSquare = {
     minCust: 17, 
     maxCust: 88,
     avgCookieSale: 5.2,
-    getRandomNumber: function() {
+    getRandomCustomer: function() {
         return Math.floor(Math.random() * (this.maxCust-this.minCust)) + this.minCust;
-    }
-}
+    },   
+    getCookiesPerHour: function(){
+        return Math.floor(this.getRandomCustomer()* this.avgCookieSale);
+    } 
+}    
 
 var portlandAirport = {
     location: "Portland Airport",
     minCust: 6, 
     maxCust: 24,
     avgCookieSale: 1.2,
-    getRandomNumber: function() {
+    getRandomCustomer: function() {
         return Math.floor(Math.random() * (this.maxCust-this.minCust)) + this.minCust;
+    },
+    getCookiesPerHour: function(){
+        return Math.floor(this.getRandomCustomer()* this.avgCookieSale);
     }
 }
 
@@ -32,8 +38,11 @@ var washingtonSquare = {
     minCust: 11,
     maxCust: 38,
     avgCookieSale: 1.9,
-    getRandomNumber: function() {
+    getRandomCustomer: function() {
         return Math.floor(Math.random() * (this.maxCust-this.minCust)) + this.minCust;
+    },
+    getCookiesPerHour: function(){
+        return Math.floor(this.getRandomCustomer()* this.avgCookieSale);
     }
 }
 
@@ -42,8 +51,11 @@ var sellwood = {
     minCust: 20,
     maxCust: 48,
     avgCookieSale: 3.3,
-    getRandomNumber: function(){
-        return Math.floor(Math.random()) * (this.maxCust-this.minCust)) + this.minCust;
+    getRandomCustomer: function(){
+        return Math.floor(Math.random() * (this.maxCust-this.minCust)) + this.minCust;
+    },
+    getCookiesPerHour: function(){
+        return Math.floor(this.getRandomCustomer()* this.avgCookieSale);
     }
 }
 
@@ -52,7 +64,10 @@ var pearlDistrict = {
     minCust: 3,
     maxCust: 24,
     avgCookieSale: 2.6,
-    getRandomNumber: function(){
+    getRandomCustomer: function(){
         return Math.floor(Math.random()) * (this.maxCust-this.minCust)) + this.minCust;
-    }
+    },
+    getCookiesPerHour: function(){
+        return Math.floor(this.getRandomCustomer()* this.avgCookieSale);
+    }   
 }
