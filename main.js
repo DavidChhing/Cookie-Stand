@@ -69,14 +69,14 @@ var storeLocations = [pioneerSquare, portlandAirport, washingtonSquare, sellwood
 
 var storeHTML = "";
     for (var storeIndex = 0; storeIndex < storeLocations.length; storeIndex++) {
-        storeHTML += "<h2>" + storeLocations[storeIndex].name + "</h2><ul>";
+        storeHTML += "<table><tr><th>" + storeLocations[storeIndex].name + "</th></tr>";
         var totalCookies = 0;  
         for (var hourIndex = 0; hourIndex < timeOfDay.length; hourIndex++) {
             var cookiesForHour = storeLocations[storeIndex].getCookiesPerHour();
             totalCookies += cookiesForHour;
-            storeHTML += "<li>" + timeOfDay[hourIndex] + ": " + cookiesForHour + " cookies" + "</li>";
+            storeHTML += "<tr><td>" + timeOfDay[hourIndex] + ": " + cookiesForHour + " cookies" + "</td></tr>";
         }
-        storeHTML += "<li>" + "Total" + ": " + totalCookies + " cookies" + "</li></ul>";
+        storeHTML += "<tr><td>" + "Total" + ": " + totalCookies + " cookies" + "</td></tr></table>";
         storeLocations.innerHTML += storeHTML;
     }
 document.getElementById("locations").innerHTML = storeHTML;
