@@ -1,5 +1,6 @@
 var timeOfDay = ['10AM', '11AM', '12pm', '1PM', '2PM', '3PM', '4PM', '5PM'];
 
+
 var pioneerSquare = {
     name: "Pioneer Square",
     minCust: 17,
@@ -9,9 +10,7 @@ var pioneerSquare = {
         return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
     },
     getCookiesPerHour: function () {
-        for (var i = 0; i < timeOfDay.length; i++) {
-            return Math.floor(this.getRandomCustomer() * this.avgCookieSale);
-        }
+        return Math.floor(this.getRandomCustomer() * this.avgCookieSale);
     },
 }
 
@@ -24,9 +23,7 @@ var portlandAirport = {
         return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
     },
     getCookiesPerHour: function () {
-        for (var i = 0; i < timeOfDay.length; i++) {
-            return Math.floor(this.getRandomCustomer() * this.avgCookieSale);
-        }
+        return Math.floor(this.getRandomCustomer() * this.avgCookieSale);    
     },
 }
 
@@ -39,9 +36,7 @@ var washingtonSquare = {
         return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
     },
     getCookiesPerHour: function () {
-        for (var i = 0; i < timeOfDay.length; i++) {
-            return Math.floor(this.getRandomCustomer() * this.avgCookieSale);
-        }
+        return Math.floor(this.getRandomCustomer() * this.avgCookieSale);
     },
 }
 
@@ -54,9 +49,7 @@ var sellwood = {
         return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
     },
     getCookiesPerHour: function () {
-        for (var i = 0; i < timeOfDay.length; i++) {
-            return Math.floor(this.getRandomCustomer() * this.avgCookieSale);
-        }
+        return Math.floor(this.getRandomCustomer() * this.avgCookieSale);  
     },
 }
 
@@ -69,9 +62,7 @@ var pearlDistrict = {
         return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
     },
     getCookiesPerHour: function () {
-        for (var i = 0; i < timeOfDay.length; i++) {
-            return Math.floor(this.getRandomCustomer() * this.avgCookieSale);
-        }
+        return Math.floor(this.getRandomCustomer() * this.avgCookieSale);
     },
 }
 
@@ -79,10 +70,14 @@ var storeLocations = [pioneerSquare, portlandAirport, washingtonSquare, sellwood
 
 var storeHTML = "";
     for (var storeIndex = 0; storeIndex < storeLocations.length; storeIndex++) {
-        storeHTML += "<h2>" + storeLocations[storeIndex].name + "</h2>";
+        storeHTML += "<h2>" + storeLocations[storeIndex].name + "</h2><ul>";
+        var totalCookies = 0;  
         for (var hourIndex = 0; hourIndex < timeOfDay.length; hourIndex++) {
-            storeHTML += "<ul><li>" + timeOfDay[hourIndex] + ": " + storeLocations[storeIndex].getCookiesPerHour() + " cookies" + "</li></ul>";
+            var cookiesForHour = storeLocations[storeIndex].getCookiesPerHour();
+            totalCookies += cookiesForHour;
+            storeHTML += "<li>" + timeOfDay[hourIndex] + ": " + cookiesForHour + " cookies" + "</li>";
         }
+        storeHTML += "<li>" + "Total" + ": " + totalCookies + " cookies" + "</li></ul>";
         storeLocations.innerHTML += storeHTML;
     }
 document.getElementById("locations").innerHTML = storeHTML;
