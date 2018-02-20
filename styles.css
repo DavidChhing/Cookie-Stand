@@ -15,3 +15,8 @@ ul {
     text-align: left;
     font-size: 17px;
 }
+table, th, td {
+    border: 1px solid black;
+    width:185px;
+    height:22px;
+ }
