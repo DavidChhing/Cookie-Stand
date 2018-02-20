@@ -1,3 +1,5 @@
+'use strict';
+
 var timeOfDay = ['10AM', '11AM', '12pm', '1PM', '2PM', '3PM', '4PM', '5PM'];
 
 var pioneerSquare = {
