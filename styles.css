@@ -4,9 +4,12 @@ h1 {
     text-align: left;
 }
 h2 {
+    font-family: 'Roboto', sans-serif;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    font-weight: bold;
+    font-size: 30px;
 }
 th {
     color: rgb(22, 14, 36);
@@ -31,5 +34,25 @@ table, th, td {
     
  }
  body {
-     background-color: rgb(242, 168, 139);
+    background-color: rgb(242, 168, 139);
  }
+.aside-box {
+    border: 10px solid black;
+    width: 300px;
+    height: 400px;
+    padding: 15px;
+    margin: 15px;
+    margin-left: auto;
+    display: inline-block;
+    vertical-align: top;
+}
+section {
+    display: inline-block;
+    vertical-align: top;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
