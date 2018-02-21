@@ -3,6 +3,11 @@ h1 {
     font-family: comic sans-serif;
     text-align: left;
 }
+h2 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
 th {
     color: rgb(22, 14, 36);
     font-family: comic sans-serif;
@@ -19,6 +24,12 @@ table, th, td {
     border: 1px solid black;
     width:185px;
     height:22px;
-    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 18px;
+    
  }
- 
+ body {
+     background-color: rgb(242, 168, 139);
+ }
