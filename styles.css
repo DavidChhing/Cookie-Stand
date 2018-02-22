@@ -1,7 +1,8 @@
 h1 {
-    color: rgb(23, 24, 124);
+    color: rgba(6, 29, 123, 0.906);
     font-family: 'Playfair Display', serif;
     text-align: center;
+    font-size: 50px;
 }
 h2 {
     font-family: 'Roboto', sans-serif;
@@ -10,9 +11,14 @@ h2 {
     text-align: center;
     font-weight: bold;
     font-size: 30px;
+    color: rgb(25, 110, 163);
 }
 h3 {
     text-align: center;
+    font-family: 'Bellefair', serif;
+    font-size: 35px;
+    color:rgb(100, 53, 53);
+    font-weight: bold;
 }
 th {
     color: rgb(22, 14, 36);
@@ -34,15 +40,17 @@ table, th, td {
     margin-right: auto;
     text-align: center;
     font-size: 18px;
+    font-family: 'PT Sans', sans-serif;
+    color: rgb(5, 55, 58);
     
  }
  body {
-    background-color: rgb(242, 168, 139);
+    background-color:rgba(247, 183, 169, 0.988);
  }
 .aside-box {
     border: 10px solid black;
     width: 300px;
-    height: 500px;
+    height: 580px;
     padding: 15px;
     margin: 15px;
     margin-left: auto;
@@ -78,4 +86,8 @@ footer {
     margin-right: auto;
     display: inline-block;
     vertical-align: bottom;
+}
+p {
+    font-family: Georgia;
+    color:rgb(24, 6, 6);
 }
