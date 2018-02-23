@@ -2,72 +2,25 @@
 
 var timeOfDay = ['10AM', '11AM', '12pm', '1PM', '2PM', '3PM', '4PM', '5PM'];
 
-var pioneerSquare = {
-    name: "Pioneer Square",
-    minCust: 17,
-    maxCust: 88,
-    avgCookieSale: 5.2,
-    getRandomCustomer: function () {
+function CookieStores(name, minCust, maxCust, avgCookieSale, getRandomCustomer,getCookiesPerHour) {
+    this.name = name;
+    this.minCust = minCust;
+    this.maxCust = maxCust;
+    this.avgCookieSale = avgCookieSale; 
+    this.getRandomCustomer = function () {
         return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
-    },
-    getCookiesPerHour: function () {
+    }
+    this.getCookiesPerHour = function () {
         return Math.floor(this.getRandomCustomer() * this.avgCookieSale);
-    },
+    }    
 }
 
-var portlandAirport = {
-    name: "Portland Airport",
-    minCust: 6,
-    maxCust: 24,
-    avgCookieSale: 1.2,
-    getRandomCustomer: function () {
-        return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
-    },
-    getCookiesPerHour: function () {
-        return Math.floor(this.getRandomCustomer() * this.avgCookieSale);    
-    },
-}
-
-var washingtonSquare = {
-    name: "Washington Square",
-    minCust: 11,
-    maxCust: 38,
-    avgCookieSale: 1.9,
-    getRandomCustomer: function () {
-        return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
-    },
-    getCookiesPerHour: function () {
-        return Math.floor(this.getRandomCustomer() * this.avgCookieSale);
-    },
-}
-
-var sellwood = {
-    name: "sellwood",
-    minCust: 20,
-    maxCust: 48,
-    avgCookieSale: 3.3,
-    getRandomCustomer: function () {
-        return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
-    },
-    getCookiesPerHour: function () {
-        return Math.floor(this.getRandomCustomer() * this.avgCookieSale);  
-    },
-}
-
-var pearlDistrict = {
-    name: "Pearl District",
-    minCust: 3,
-    maxCust: 24,
-    avgCookieSale: 2.6,
-    getRandomCustomer: function () {
-        return Math.floor(Math.random() * (this.maxCust - this.minCust)) + this.minCust;
-    },
-    getCookiesPerHour: function () {
-        return Math.floor(this.getRandomCustomer() * this.avgCookieSale);
-    },
-}
-
-var storeLocations = [pioneerSquare, portlandAirport, washingtonSquare, sellwood, pearlDistrict];
+var storeLocations = [];
+storeLocations.push(new CookieStores('Pioneer Square', 17, 88, 5.2));
+storeLocations.push(new CookieStores('Portland Airport', 6, 24, 1.2));
+storeLocations.push(new CookieStores('Washington Square', 11, 38, 1.9));
+storeLocations.push(new CookieStores('Sellwd', 20, 48, 3.3));
+storeLocations.push(new CookieStores('Pearl District', 3, 24, 2.6));
 
 var storeHTML = "";
     for (var storeIndex = 0; storeIndex < storeLocations.length; storeIndex++) {
