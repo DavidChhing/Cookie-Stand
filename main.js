@@ -19,24 +19,48 @@ var storeLocations = [];
 storeLocations.push(new CookieStores('Pioneer Square', 17, 88, 5.2));
 storeLocations.push(new CookieStores('Portland Airport', 6, 24, 1.2));
 storeLocations.push(new CookieStores('Washington Square', 11, 38, 1.9));
-storeLocations.push(new CookieStores('Sellwd', 20, 48, 3.3));
+storeLocations.push(new CookieStores('Sellwood', 20, 48, 3.3));
 storeLocations.push(new CookieStores('Pearl District', 3, 24, 2.6));
 
-var storeHTML = "";
+function makeTable() {
+    var storeHTML = document.getElementById("locations").firstElementChild;
     for (var storeIndex = 0; storeIndex < storeLocations.length; storeIndex++) {
-        storeHTML += "<table><tr><th>" + storeLocations[storeIndex].name + "</th></tr>";
+        storeHTML.innerHTML += "<tr><th>" + storeLocations[storeIndex].name + "</th></tr>";
         var totalCookies = 0;  
         for (var hourIndex = 0; hourIndex < timeOfDay.length; hourIndex++) {
             var cookiesForHour = storeLocations[storeIndex].getCookiesPerHour();
+            storeHTML.innerHTML += "<tr><td>" + timeOfDay[hourIndex] + ": " + cookiesForHour + " cookies" + "</td></tr>";
             totalCookies += cookiesForHour;
-            storeHTML += "<tr><td>" + timeOfDay[hourIndex] + ": " + cookiesForHour + " cookies" + "</td></tr>";
         }
-        storeHTML += "<tr><td>" + "Total" + ": " + totalCookies + " cookies" + "</td></tr></table>";
-        storeLocations.innerHTML += storeHTML;
+        storeHTML.innerHTML += "<tr><td>" + "Total" + ": " + totalCookies + " cookies" + "</td></tr>";
     }
-document.getElementById("locations").innerHTML = storeHTML;
+}
 
+function getStoreInfo(form) {
+    var storeName = form["store-name"].value;
+    var minCustomers = form["min-customers"].value;
+    var maxCustomers = form["max-customers"].value;
+    var newAverageCookieSale = form["average-cookie-sale"].value;
+    storeLocations.push(new CookieStores(storeName, minCustomers, maxCustomers, newAverageCookieSale));
+    makeTable();
+}
 
+makeTable();
+
+// function validateNewStoreInfo(fieldset) {
+//     var allFieldsFilled = true;
+//     for (var index = 0; index < fieldset.elements.length; index++) {
+//          if (fieldset.elements[index].value =="") {
+//             allFieldsFilled = false;
+//         } 
+//         var newStoreInfo = document.createElement("fieldset");
+//     }
+//     if (allFieldsFilled) {
+//         alert("Please fill all necessary fields and submit again.");
+//         return false;
+//     }
+//     return true;
+// }
 
 
 
