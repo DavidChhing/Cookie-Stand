@@ -34,15 +34,18 @@ ul {
 }
 table, th, td {
     border: 1px solid black;
-    width:185px;
-    height:22px;
+    width:300px;
+    height:50px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     font-size: 18px;
     font-family: 'PT Sans', sans-serif;
     color: rgb(5, 55, 58);
-    
+    padding: 6px;
+ }
+ tr:hover {
+     background-color: rgb(218, 218, 106);
  }
  body {
     background-color:rgba(247, 183, 169, 0.988);
@@ -71,7 +74,6 @@ section {
     margin-right: auto;
     width: 50%;
     text-align: center; 
-    
 }
 figcaption {
     text-align: center;
@@ -91,5 +93,6 @@ p {
     font-family: Georgia;
     color:rgb(24, 6, 6);
 }
-
-/* min heigh min width */
+a:hover { 
+    background-color: yellow;
+}
